@@ -1,0 +1,19 @@
+# JobFit AI — Resume ↔ Job Match (Weekend MVP)
+
+
+A fast API + minimal frontend that computes a match score between a résumé (PDF) and a job description, and generates Top 3 improvements via LLM.
+
+
+## Features
+- Embed-based **semantic similarity** (MiniLM-L6-v2)
+- **Keyword** overlap for skills / responsibilities / titles
+- **Top 3 improvements** via LLM (robust JSON parsing with fallback)
+- Simple web form, or use cURL/Postman
+
+
+## Quickstart
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.sample .env # add OPENAI_API_KEY
+uvicorn app.main:app --reload --port 8000
